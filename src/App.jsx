@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header.jsx";
 import UserInput from "./components/UserInput.jsx";
 import Results from "./components/Results.jsx";
+import Error from "./components/Error.jsx";
 
 function App() {
   const [userInput, setUserInput] =  
@@ -20,11 +21,14 @@ function App() {
         };
     });
   }
+
+  const inputIsValid = userInput.duration > 0;
   return (
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange}/>
-      <Results input={userInput}/>
+      {inputIsValid && <Results input={userInput}/>}
+      {!inputIsValid && <Error/>}
     </>
   );
 }
