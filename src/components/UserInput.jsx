@@ -1,22 +1,22 @@
 import {useState} from 'react';
 
-export default function UserInput({onChange, userInput}) {
+export default function UserInput({userInput, onChange}) {
     return (
     <section id="user-input">
         <div className="input-group">
             <p>
                 <label>Initial Investment</label>
-                <input type="number" value={userInput.initialInv} onChange={(event) => onChange('initialInv', event.target.value)} required />
+                <input type="number" value={userInput.initialInvestment} onChange={(event) => onChange('initialInvestment', event.target.value)} required />
             </p>
             <p>
                 <label>Annual Investment</label>
-                <input type="number" value={userInput.annualInv} onChange={(event) => onChange('annualInv', event.target.value)} required/>
+                <input type="number" value={userInput.annualInvestment} onChange={(event) => onChange('annualInvestment', event.target.value)} required/>
             </p>
         </div>
         <div className="input-group">
             <p>
                 <label>Expected Return</label>
-                <input type="number" value={userInput.expectedRet} onChange={(event) => onChange('expectedRet', event.target.value)} required/>
+                <input type="number" value={userInput.expectedReturn} onChange={(event) => onChange('expectedReturn', event.target.value)} required/>
             </p>
             <p>
                 <label>Duration</label>
