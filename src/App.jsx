@@ -9,7 +9,7 @@ function App() {
     useState({
         initialInvestment : 10000,
         annualInvestment : 1200,
-        expectedReturn : 1200,
+        expectedReturn : 10,
         duration : 10,
     });
   
